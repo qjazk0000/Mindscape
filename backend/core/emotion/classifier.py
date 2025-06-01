@@ -85,5 +85,3 @@ def classify_emotions(
     
     # 단일 문자열 입력이었다면 첫 결과만 반환
     return results[0] if isinstance(text_input, str) else results
-
-## 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
