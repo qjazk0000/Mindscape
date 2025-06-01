@@ -162,7 +162,8 @@ mindscape/
 ├── .env                            # 환경변수(API 키, DB 비번 등)
 ├── requirements.txt               # 전체 패키지 의존성 관리
 ├── README.md
-└── docker-compose.yml             # (옵션) 서비스 배포용 설정
+└── docker-compose.yml             # (옵션) 서비스 배포용 설정  
+
 🧩 폴더별 설명 요약
 폴더	역할
 backend/	Django 기반 REST API 서버
