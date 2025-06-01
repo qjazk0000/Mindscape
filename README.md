@@ -35,9 +35,7 @@ LLM이 MCP 방식으로 감정 분석 + 성격 기반 해석 + 개선 제안
 (선택) 사용자는 감정 히스토리, 통계, 루틴 실행 여부를 기록
 
 ✅ 4. 시스템 구성도
-plaintext
-복사
-편집
+
 ┌────────────┐
 │ User Input │ ← 감정일기, 고민, 생각
 └────┬───────┘
@@ -58,12 +56,11 @@ plaintext
 └────────┬────────────────────┘
          ↓
 ┌───────────────────────┐
-│ Structured Response UI │ ← 피드백 + 요약 + 추천
+│ Structured Response UI │ ← 피드백 + 요약 + 추천  
 └───────────────────────┘
+
 ✅ 5. MCP Prompt 설계 예시
-text
-복사
-편집
+
 [Instruction]
 당신은 따뜻한 심리상담가입니다. 사용자의 감정과 성격을 분석하고, 공감과 함께 실질적인 피드백을 주세요.
 
@@ -77,7 +74,8 @@ text
 1. 감정 요약  
 2. 성격 특성과 연결된 해석  
 3. 추천 루틴 or 오늘의 질문  
-4. 공감 어조 유지, 600자 내외
+4. 공감 어조 유지, 600자 내외  
+
 ✅ 6. 기술 스택
 항목	도구/라이브러리
 백엔드	Python (FastAPI)
@@ -124,51 +122,51 @@ v5	음성 입력 / 모바일 대응	실사용성 강화
 
 📁 최종 프로젝트 폴더 구조: mindscape/
 
-mindscape/
-│
-├── backend/                        # Django 백엔드
-│   ├── mindscape/                  # Django 프로젝트 설정 (settings.py 등)
-│   │   ├── __init__.py
-│   │   ├── settings.py             # MySQL, OpenAI 등 설정
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│   │
-│   ├── core/                       # 공통 모듈 (유틸, 인증 등)
-│   ├── users/                      # 사용자 인증 및 프로파일 앱
-│   ├── diary/                      # 감정 일기/분석 관련 앱
-│   ├── recommendation/            # 루틴 추천 관련 앱
-│   ├── rag/                        # RAG + 벡터DB 관리용 앱
-│   └── manage.py
-│
-├── frontend/                       # Streamlit 프론트엔드
-│   ├── pages/                      # 다중 페이지 구성 시
-│   ├── components/                 # 카드, 그래프, 입력 UI 등 모듈화
-│   ├── assets/                     # 이미지, 스타일, JS 등 정적 파일
-│   └── app.py                      # 메인 실행 파일
-│
-├── rag_service/                    # 벡터DB 및 LLM 호출 분리 모듈
-│   ├── loader/                     # 문서 로드 및 임베딩 스크립트
-│   ├── retriever/                  # 유사도 검색 기능
-│   └── prompts/                    # MCP 프롬프트 템플릿 관리
-│
-├── data/                           # 수집한 원시 데이터셋
-│   ├── raw/                        # 크롤링 원본
-│   ├── processed/                  # 전처리 완료 파일
-│   └── embeddings/                # 임베딩 결과 저장
-│
-├── scripts/                        # 초기화 스크립트, 배치 작업 등
-│   └── load_data.py                # 초기 데이터셋 등록용 등
-│
-├── .env                            # 환경변수(API 키, DB 비번 등)
-├── requirements.txt               # 전체 패키지 의존성 관리
-├── README.md
+mindscape/  
+│  
+├── backend/                        # Django 백엔드  
+│   ├── mindscape/                  # Django 프로젝트 설정 (settings.py 등)  
+│   │   ├── __init__.py  
+│   │   ├── settings.py             # MySQL, OpenAI 등 설정  
+│   │   ├── urls.py  
+│   │   └── wsgi.py  
+│   │  
+│   ├── core/                       # 공통 모듈 (유틸, 인증 등)  
+│   ├── users/                      # 사용자 인증 및 프로파일 앱  
+│   ├── diary/                      # 감정 일기/분석 관련 앱  
+│   ├── recommendation/            # 루틴 추천 관련 앱  
+│   ├── rag/                        # RAG + 벡터DB 관리용 앱  
+│   └── manage.py  
+│  
+├── frontend/                       # Streamlit 프론트엔드  
+│   ├── pages/                      # 다중 페이지 구성 시  
+│   ├── components/                 # 카드, 그래프, 입력 UI 등 모듈화  
+│   ├── assets/                     # 이미지, 스타일, JS 등 정적 파일  
+│   └── app.py                      # 메인 실행 파일  
+│  
+├── rag_service/                    # 벡터DB 및 LLM 호출 분리 모듈  
+│   ├── loader/                     # 문서 로드 및 임베딩 스크립트  
+│   ├── retriever/                  # 유사도 검색 기능  
+│   └── prompts/                    # MCP 프롬프트 템플릿 관리  
+│  
+├── data/                           # 수집한 원시 데이터셋  
+│   ├── raw/                        # 크롤링 원본  
+│   ├── processed/                  # 전처리 완료 파일  
+│   └── embeddings/                # 임베딩 결과 저장  
+│  
+├── scripts/                        # 초기화 스크립트, 배치 작업 등  
+│   └── load_data.py                # 초기 데이터셋 등록용 등  
+│  
+├── .env                            # 환경변수(API 키, DB 비번 등)  
+├── requirements.txt               # 전체 패키지 의존성 관리  
+├── README.md  
 └── docker-compose.yml             # (옵션) 서비스 배포용 설정  
 
-🧩 폴더별 설명 요약
-폴더	역할
-backend/	Django 기반 REST API 서버
-frontend/	Streamlit 기반 웹 UI
-rag_service/	문서 임베딩, RAG 검색, LLM 프롬프트 처리
-data/	데이터셋 관리, 벡터화 이전/이후 포함
-scripts/	초기 로딩, 배치 처리 등 자동화
-.env	OPENAI_API_KEY, MYSQL_URL, LANGCHAIN_TRACING 등
+🧩 폴더별 설명 요약  
+폴더	역할  
+backend/	Django 기반 REST API 서버  
+frontend/	Streamlit 기반 웹 UI  
+rag_service/	문서 임베딩, RAG 검색, LLM 프롬프트 처리  
+data/	데이터셋 관리, 벡터화 이전/이후 포함  
+scripts/	초기 로딩, 배치 처리 등 자동화  
+.env	OPENAI_API_KEY, MYSQL_URL, LANGCHAIN_TRACING 등  
