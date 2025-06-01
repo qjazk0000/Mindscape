@@ -51,7 +51,7 @@ LLM이 MCP 방식으로 감정 분석 + 성격 기반 해석 + 개선 제안
                            ↓  
         ┌──────────────────────────────────────────────┐  
         │         LLM + MCP Prompt Template            │  
-        │   1. 감정 분석                                │  
+        │   1. 감정 분석                               │  
         │   2. 성격 기반 해석                           │  
         │   3. 성장 루틴 및 질문 생성                   │  
         └────────────┬─────────────────────────────────┘  
@@ -163,11 +163,13 @@ mindscape/
 ├── README.md  
 └── docker-compose.yml             # (옵션) 서비스 배포용 설정  
 
-🧩 폴더별 설명 요약  
-폴더	역할  
-backend/	Django 기반 REST API 서버  
-frontend/	Streamlit 기반 웹 UI  
-rag_service/	문서 임베딩, RAG 검색, LLM 프롬프트 처리  
-data/	데이터셋 관리, 벡터화 이전/이후 포함  
-scripts/	초기 로딩, 배치 처리 등 자동화  
-.env	OPENAI_API_KEY, MYSQL_URL, LANGCHAIN_TRACING 등  
+### 🧩 폴더별 설명 요약
+
+| 폴더/파일      | 역할 설명                                                  |
+|----------------|-------------------------------------------------------------|
+| `backend/`     | Django 기반 REST API 서버                                  |
+| `frontend/`    | Streamlit 기반 웹 UI                                       |
+| `rag_service/` | 문서 임베딩, RAG 검색, LLM 프롬프트 처리                   |
+| `data/`        | 데이터셋 관리, 벡터화 이전/이후 포함                        |
+| `scripts/`     | 초기 로딩, 배치 처리 등 자동화                             |
+| `.env`         | OPENAI_API_KEY, MYSQL_URL, LANGCHAIN_TRACING 등 환경 변수 |
