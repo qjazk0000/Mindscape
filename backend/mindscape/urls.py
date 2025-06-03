@@ -16,8 +16,17 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("diary/", include("diary.urls")),
+
+    # ✅ JWT 인증용 URL 추가
+    path("diary/token/", TokenObtainPairView.as_view(), name="token_obtain_pari"),
+    path("diary/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
