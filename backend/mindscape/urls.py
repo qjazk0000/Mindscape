@@ -21,9 +21,11 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from .views import home
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('', home),
     path("diary/", include("diary.urls")),
 
     # ✅ JWT 인증용 URL 추가
