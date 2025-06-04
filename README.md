@@ -79,7 +79,7 @@ LLM이 MCP 방식으로 감정 분석 + 성격 기반 해석 + 개선 제안
 
 ✅ 6. 기술 스택
 항목	도구/라이브러리
-백엔드	Python (FastAPI)
+백엔드	Python (Django Framework)
 LLM	OpenAI GPT-4 / Claude 3 / Mistral
 RAG	LangChain + FAISS / Chroma
 프롬프트 관리	LangChain PromptTemplate / LCEL
