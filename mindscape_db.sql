@@ -10,3 +10,8 @@ FLUSH PRIVILEGES;
 REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'mindscape_user'@'localhost';
 DROP USER 'mindscape_user'@'localhost';
 FLUSH PRIVILEGES;
+
+
+use mindscape_db;
+
+select * from auth_user;
